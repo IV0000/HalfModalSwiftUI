@@ -33,7 +33,7 @@ struct HalfModal<T>: UIViewRepresentable where T: View{
         button.addAction(UIAction { _ in
             
             let hostingController = UIHostingController(rootView: content)
-            let viewController = BottomSheetWrapperController(detents: detents,grabber: grabber)
+            let viewController = HalfModalController(detents: detents,grabber: grabber)
             viewController.addChild(hostingController)
             viewController.view.addSubview(hostingController.view)
             hostingController.view.pinToEdgesOf(viewController.view)
@@ -47,8 +47,9 @@ struct HalfModal<T>: UIViewRepresentable where T: View{
     
     
     func updateUIView(_ uiView: UIButton, context: Context) {
-        //Update the view when the binding label changes
+        //Update the button view when the binding label changes
         uiView.setTitle(label, for: .normal)
+
     }
     
     func makeCoordinator() -> Void {
@@ -68,7 +69,7 @@ extension UIView {
 
 
 
-class BottomSheetWrapperController: UIViewController {
+class HalfModalController: UIViewController {
     let detents: [UISheetPresentationController.Detent]
     let grabber: Bool
     
@@ -84,7 +85,6 @@ class BottomSheetWrapperController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let sheetController = self.presentationController as? UISheetPresentationController {
             sheetController.detents = detents
             sheetController.prefersGrabberVisible = grabber

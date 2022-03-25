@@ -11,7 +11,6 @@ struct MainView: View {
     @State var selectedPrivacy = "Privacy"
     
     var body: some View {
-        
         VStack{
             Spacer()
             HStack{
