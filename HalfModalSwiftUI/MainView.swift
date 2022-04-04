@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    
     @State var selectedPrivacy = "Privacy"
     
     var body: some View {
@@ -15,9 +16,11 @@ struct MainView: View {
             Spacer()
             HStack{
                 HalfModal(label: $selectedPrivacy, detents: [.medium()], grabber: true) {
+                    
                     /// The content of your half modal
                     ContentView(selectedPrivacy: $selectedPrivacy)
                         .padding(.top,30)
+                    
                     Spacer()
                 }
                 .fixedSize(horizontal: true, vertical: true)
