@@ -1,10 +1,9 @@
 # HalfModalSwiftUI
-Based on [post](https://www.donnywals.com/using-uisheetpresentationcontroller-in-swiftui/) tutorial i've tried to create a custom privacy picker in SwiftUI.
-To achieve this I've used UIViewRepresentable protocol to create a wrapper of the UIkit view in which I have used the UISheetPresentationController and a UIButton to show the modal.
+Based on this [post](https://www.donnywals.com/using-uisheetpresentationcontroller-in-swiftui/) I've created a custom privacy picker in SwiftUI.
 
-![Simulator Screen Recording - iPhone 13 Pro - 2022-03-25 at 18 49 04](https://user-images.githubusercontent.com/94223094/160174724-c4d949ac-feff-4775-a378-c24098603029.gif#gh-dark-mode-only)
+Since there is no native half modal in SwiftUI I've used `UIViewRepresentable` protocol to create a wrapper of the `UIKit` view. Then I have used the recently introduced `UISheetPresentationController` to create the half modal experience in UIKit. To present the modal I've used an `UIButton` to show the modal.
 
+![Simulator Screen Recording - iPhone 8 Plus - 2022-04-04 at 11 12 18](https://user-images.githubusercontent.com/94223094/161512562-0721b7f5-6204-4bb7-8c69-5d95efe84955.gif#gh-light-mode-only)
 
-![Simulator Screen Recording - iPhone 13 Pro - 2022-03-25 at 18 23 03](https://user-images.githubusercontent.com/94223094/160170753-df745f2a-758a-40d3-80f2-8e2015b0f213.gif#gh-light-mode-only)
+![Simulator Screen Recording - iPhone 8 Plus - 2022-04-04 at 11 47 28](https://user-images.githubusercontent.com/94223094/161518983-5990e4d0-c6f9-475e-a551-c7f9d9668a25.gif#gh-dark-mode-only)
 
-Note: In this gif the bottom corners of the modal are rounded (idk why). This is just an issue of the gif, in the simulator is all working fine.
